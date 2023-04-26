@@ -3,7 +3,7 @@ const btnPrev = document.querySelector(".btn-prev");
 const btnNext = document.querySelector(".btn-next");
 
 let count = 1;
-
+const url = `https://jsonplaceholder.typicode.com/todos/1`;
 
 btnNext.onclick = () => {
   count++;
@@ -11,6 +11,7 @@ btnNext.onclick = () => {
     .then((reponce) => reponce.json())
     .then((data) => {
       block.innerHTML = `
+      <h1>Count:${count}</h1>
         <h2>${data.title}</h2>
         <span>${data.id}</span>
         <h3>${data.completed}</h3>
@@ -19,10 +20,12 @@ btnNext.onclick = () => {
 };
 
 btnPrev.onclick = () => {
-  fetch(`https://jsonplaceholder.typicode.com/todos/1`)
+  count =1
+  fetch(url)
     .then((reponce) => reponce.json())
     .then((data) => {
       block.innerHTML = `
+      <h1>Count:${count}</h1>
       <h2>${data.title}</h2>
       <span>${data.id}</span>
       <h3>${data.completed}</h3>
@@ -31,7 +34,7 @@ btnPrev.onclick = () => {
 };
 
 const getRequest = () => {
-  fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+  fetch(url)
     .then((reponce) => reponce.json())
     .then((data) => {
       block.innerHTML = `
