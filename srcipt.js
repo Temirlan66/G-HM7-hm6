@@ -2,8 +2,6 @@ const block = document.querySelector(".block");
 const btnPrev = document.querySelector(".btn-prev");
 const btnNext = document.querySelector(".btn-next");
 
-// Извиняюсь что нарушил  еще принцип DRY , другого варианта не нашел....(
-
 let count = 1;
 const request = async () => {
   try {
